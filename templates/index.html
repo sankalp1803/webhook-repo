@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webhook Events</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+    .event { margin-bottom: 20px; padding: 15px; background: #fff; border-left: 5px solid #007acc; }
+    .timestamp { font-size: 0.9em; color: gray; }
+    pre { background: #eee; padding: 10px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Webhook Event Logs</h1>
+  {% for log in logs %}
+    <div class="event">
+      <div class="timestamp">{{ log.timestamp }} | {{ log.event_type }}</div>
+      <pre>{{ log.payload | tojson(indent=2) }}</pre>
+    </div>
+  {% endfor %}
+</body>
+</html>
