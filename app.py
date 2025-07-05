@@ -2,6 +2,8 @@ from flask import Flask, request, render_template
 import json
 import os
 from datetime import datetime
+from flask import Flask, request, render_template
+app = Flask(__name__)
 
 app = Flask(__name__)
 
